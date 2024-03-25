@@ -1,0 +1,100 @@
+1. https://github.com/M-Nikox
+
+2. Branch settings -> rename main branch -> master
+
+3. Create repository -> SI_2024_lab1_225011
+
+4. git init - иницијализација на репозиториумот (создава .git)
+
+5. 
+git remote add origin https://github.com/M-Nikox/SI_2024_lab1_225011.git - поврзување на локален директориум со оддалечен репозиториум
+
+git remote -v - проверка дали успешно се поврзани
+
+6.
+notepad README.MD - креираме и пишуваме име презиме и индекс во датотеката
+git status - проверка за датотеки што не се во staging
+git add README.MD - ја додаваме датотеката во staging
+git commit -m "Initial commit" - commit со порака (-m дозволува кратки пораки без отварање на текст едитор) "Initial commit"
+
+7.
+ги превземаме датотеките, после:
+git add . - со "." ги додаваме сите датотеки во тековниот директориум во staging
+git commit -m "Add starter code" - commit со порака
+
+8.
+git push -u origin master - праќаме промени од нашиот локален директориум до оддалечениот репозиториум, па со -u го ставаме како главна upstream гранка, за да master го следи origin master
+
+9.
+git branch bug1 - создаваме гранка bug1
+git branch bug2 - создаваме гранка bug2
+
+10.
+git checkout bug1 - се префрламе на bug1
+
+11.
+Ја поправаме грешката (јас ја поправив преку VSCode, може со nano/nvim)
+git add .\SILab1_1.java - додаваме во staging
+git commit -m "Fix wrong condition in filterOddLengthStrings" - commit со порака
+
+12.
+git checkout bug2
+
+13.
+Ја поправаме грешката
+git add .\SILab1_2.java - додаваме во staging
+git commit -m "Fix wrong condition in makeBigStringFrom" - commit со порака
+
+14.
+git checkout bug1
+
+15.
+Ја додаваме линијата код
+git add .\SILab1Main.java
+git commit -m "Call method filterOddLengthStrings in main class"
+
+16.
+git checkout bug2
+
+17.
+Ја додаваме линијата код
+git add .\SILab1Main.java
+git commit -m "Call method makeBigStringFrom in main class"
+
+18.
+git checkout - проверка во која гранка сме
+
+git push origin bug1 - праќаме промени до гранките (оддалечените)
+git push origin bug2 - --//--
+
+19.
+git checkout master - се префрламе на гранката master
+
+20.
+git merge bug1 - ја спојуваме гранката bug1 кон master
+
+21. 
+git push --all - праќаме промени од сите гранки до оддалечениот репозиториум
+
+22.
+git checkout bug2
+
+23.
+git rebase master - се појави конфликт, можеме да земеме incoming change, current change или двете да ги внесеме рачно, го земаме incoming change бидејќи е понова промена
+git add .\SILab1Main.java
+git rebase --continue - команда за да продолжи rebase
+
+24.
+git checkout master
+
+25.
+git merge bug2
+
+26.
+git push --all - грешка, пак имаме конфликт поради гранка што е назад во споредба со оддалечениот репозиториум
+
+27.
+git push --force origin bug2 - во овој случај користиме --force
+
+28.
+git log > logs.txt
